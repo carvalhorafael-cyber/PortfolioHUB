@@ -11,7 +11,6 @@ Este repositório foi criado para reunir projetos desenvolvidos durante minha fo
 ## Estrutura
 - `projetos/` → projetos individuais
 - `documentacao/` → materiais de apoio e documentos
-- `slides/` → apresentação final
 - `assets/` → imagens, CSS e outros recursos
 
 ## Projetos
@@ -33,9 +32,6 @@ Versão online do portfólio.
 
 ## GitHub Pages
 O repositório será publicado por meio do GitHub Pages.
-
-## LinkedIn
-Os projetos deste repositório serão adicionados ao meu perfil do LinkedIn na seção de projetos.
 
 ## Autor
 Rafael Carvalho Oliveira
