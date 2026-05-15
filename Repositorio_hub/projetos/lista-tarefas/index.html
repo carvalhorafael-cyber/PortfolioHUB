@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+<body>
+  <main class="container hero" style="padding-top:40px;">
+    <span class="badge">Projeto 2</span>
+    <h1>Lista de Tarefas</h1>
+    <p class="lead">Aplicação simples para adicionar e remover tarefas.</p>
+
+    <div class="panel">
+      <input id="taskInput" type="text" placeholder="Digite uma tarefa" />
+      <div class="actions">
+        <button class="btn primary" onclick="addTask()">Adicionar</button>
+        <button class="btn secondary" onclick="clearTasks()">Limpar tudo</button>
+      </div>
+      <div id="list" class="project-list" style="margin-top:18px;"></div>
+    </div>
+  </main>
+
+  <script>
+    const list = document.getElementById('list');
+    const taskInput = document.getElementById('taskInput');
+
+    function render() {
+      const items = JSON.parse(localStorage.getItem('tasks') || '[]');
+      list.innerHTML = items.map((task, index) => `
+        <div class="project-item">
+          <strong>${task}</strong>
+          <div class="actions" style="margin-top:12px;">
+            <button class="btn secondary" onclick="removeTask(${index})">Remover</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function addTask() {
+      const value = taskInput.value.trim();
+      if (!value) return;
+      const items = JSON.parse(localStorage.getItem('tasks') || '[]');
+      items.push(value);
+      localStorage.setItem('tasks', JSON.stringify(items));
+      taskInput.value = '';
+      render();
+    }
+
+    function removeTask(index) {
+      const items = JSON.parse(localStorage.getItem('tasks') || '[]');
+      items.splice(index, 1);
+      localStorage.setItem('tasks', JSON.stringify(items));
+      render();
+    }
+
+    function clearTasks() {
+      localStorage.removeItem('tasks');
+      render();
+    }
+
+    render();
+  </script>
+</body>
+</html>
