@@ -32,6 +32,7 @@ Versão online do portfólio.
 
 ## GitHub Pages
 O repositório será publicado por meio do GitHub Pages.
+https://carvalhorafael-cyber.github.io/PortfolioHUB/#github-pages
 
 ## Autor
 Rafael Carvalho Oliveira
